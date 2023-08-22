@@ -1,0 +1,369 @@
+@import 'components/media';
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Light.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    src: url('../fonts/OpenSans-Light.ttf') format("truetype");
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    color: #333333;
+
+    &.noscroll {
+        overflow: hidden;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+input[type=text] {
+    font-family: 'Oswald';
+    // font-size: 18px;
+    // line-height: 24px;
+    color: #787878;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+
+    @include for-desktop-up {
+        padding: 0 30px;
+    }
+}
+
+
+.page__header {
+    font-family: 'Oswald';
+    font-weight: 400;
+    text-transform: uppercase;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 0 24px 0;
+
+    @include for-tablet-portrait-up {
+        flex-direction: row;
+    }
+}
+
+.section-title {
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 58px;
+    text-align: center;
+    margin: 0;
+
+    @include for-tablet-portrait-up {
+        font-size: 48px;
+        line-height: 62px;
+    }
+
+    @include for-tablet-landscape-up {
+        font-size: 52px;
+        line-height: 67px;
+    }
+
+    @include for-desktop-up {
+        font-size: 65px;
+        line-height: 96px;
+    }
+
+}
+
+.section-subtitle {
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 38px;
+    text-align: center;
+    margin: 0;
+
+
+    @include for-tablet-portrait-up {
+        font-size: 32px;
+        line-height: 49px;
+    }
+
+    @include for-tablet-landscape-up {
+        font-size: 36px;
+        line-height: 53px;
+    }
+}
+
+.list__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    margin: 5px 0;
+}
+
+.item__title {
+    font-family: 'Oswald';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 3px;
+    text-transform: none;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(160, 73, 85, .7);
+    }
+}
+
+.section_desc {
+    font-size: 18px;
+    line-height: 26px;
+
+    @include for-tablet-portrait-up {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    @include for-tablet-landscape-up {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    @include for-desktop-up {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
+
+.item__price {
+    font-family: 'Oswald';
+    font-weight: 200;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.shop__btn {
+    display: block;
+    float: left;
+    padding: 9px 12px;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(160, 73, 85, .7);
+    }
+
+    @include for-tablet-landscape-up {
+        width: 250px;
+        font-size: 24px;
+        line-height: 32px;
+        margin: 40px 0;
+    }
+}
+
+.sportif__btn {
+    display: block;
+    width: 100%;
+    float: none;
+    background: #A04955;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    margin: 30px 0;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(160, 73, 85, .7);
+    }
+}
+
+.add-btns {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+
+    @include for-desktop-up {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+.item__add-btn {
+    position: relative;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 9px 8px 7px 33px;
+    margin: 15px 0 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url(./../images/cart.svg);
+    background-repeat: no-repeat;
+    background-position: 14px 11px;
+}
+
+.wishlist__add-btn {
+    width: 100%;
+    position: relative;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    padding: 9px 8px 7px 33px;
+    margin: 15px 0 10px 0;
+    text-align: center;
+    text-transform: uppercase;
+    background: #FFFFFF;
+    color: #A04955;
+    border: 1px solid #000000;
+    background-image: url(./../images/favorites.svg);
+    background-repeat: no-repeat;
+    background-position: 8px 9px;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(160, 73, 85, .7);
+    }
+}
+
+.sportif-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 0 4px 4px 0 rgb(0, 0, 0, 0.25);
+    padding: 20px;
+
+    @include for-tablet-portrait-up {
+        padding: 25px 50px;
+    }
+
+    @include for-tablet-landscape-up {
+        padding: 31px 15px;
+    }
+}
+
+.top__arrow-link {
+    position: absolute;
+    right: 0;
+    bottom: 6px;
+    width: 64px;
+    height: 64px;
+    background: url(./../images/arrow_home.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: cover;
+    cursor: pointer;
+
+    @include for-tablet-portrait-up {
+        width: 83px;
+        height: 83px;
+        bottom: 75px;
+    }
+}
+
+.item__palette-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 20px;
+    border: 1px solid #BCBCCC;
+    padding: 0 5px;
+    cursor: pointer;
+
+    &.black {
+        background-color: rgb(28, 32, 33);
+    }
+
+    &.pastelle {
+        background-color: rgb(191, 184, 175);
+    }
+
+    &.mocco {
+        background-color: rgb(173, 145, 113);
+    }
+
+    &.dark-blue {
+        background-color: rgb(36, 55, 69);
+    }
+
+    &.grey {
+        background-color: rgb(182, 181, 186);
+    }
+}
+
+.size__list {
+    display: flex;
+    height: 0;
+    margin: 0;
+    flex-direction: row;
+    gap: 15px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: all .4s ease;
+
+    &.active {
+        height: auto;
+        opacity: 1;
+        margin: 20px 0;
+    }
+}
+
+.size__item {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    background: #F1F1F1;
+    font-size: 20px;
+    line-height: 36px;
+    cursor: pointer;
+    transition: all .5s ease;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(160, 73, 85, .7);
+    }
+}
+
+@import 'components/menu';
+@import 'components/home';
+@import 'components/plp';
+@import 'components/pdp';
+@import 'components/footer';

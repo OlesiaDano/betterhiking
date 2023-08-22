@@ -1,0 +1,129 @@
+.footer {
+    width: 100%;
+    float: left;
+    margin-top: auto;
+    position: relative;
+    padding: 30px;
+    background: #A04955;
+
+    @include for-desktop-up{
+        padding: 50px 60px;
+    }
+}
+
+.footer__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 10px;
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: #FFFFFF;
+
+    @include for-tablet-portrait-up{
+        text-align: left;
+    }
+}
+
+.footer__column{
+    display: none;
+
+    @include for-desktop-up{
+        display: block;
+    }
+}
+.footer__List {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subscribe__desc{
+    margin: 10px 0;
+    @include for-tablet-portrait-up{
+        margin: 20px 0;
+    }
+}
+
+.subscribe__form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    margin: 10px 0;
+    padding: 9px 25px;
+
+    @include for-tablet-portrait-up{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+}
+
+.subscribe__input {
+    width: 100%;
+    text-align: center;
+    border: none;
+    padding: 7px 0 7px 5px;
+    caret-color: transparent;
+
+    @include for-tablet-portrait-up{
+        text-align: left;
+        width: 60%;
+    }
+
+    &::placeholder {
+        font-family: 'Oswald';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #A04955;
+        text-align: center;
+
+        @include for-tablet-portrait-up{
+            width: 65%;
+            text-align: left;
+        }
+    }
+
+    &:focus-visible{
+        outline:none;
+        caret-color: #A04955;
+        // border: 1px solid #A04955;
+    }
+}
+
+.subscribe__button {
+    font-family: 'Oswald';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 5px 45px;
+
+    &:hover {
+        box-shadow: 10px 5px 5px rgba(160, 73, 85, .7);
+    }
+
+    @include for-tablet-portrait-up{
+        width: 35%;
+    }
+}
+
+.footer__copyright {
+    background: #FFFFFF;
+    .copyright__text {
+        font-family: 'Oswald';
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 25px;
+        color: rgba(0, 0, 0, 0.5);
+        padding-left: 40px;
+    }
+}

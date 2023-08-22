@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportIF PDP</title>
+    <link rel="stylesheet" type="text/css" href="./dist/star-rating-svg.css">
+    <link href="light-carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/style.css" />
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="./dist/jquery.star-rating-svg.js"></script>
+    <script src="jquery.light-carousel.js"></script>
+    <script defer src="./dist/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <a href="./index.html" class="logo">
+                    <img src="images/hiking_logo.png" alt="logo-image" class="logo__img">
+                </a>
+                <button class="menu__btn">
+                    <span class="row"></span>
+                </button>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Shorts</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Pants</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Shirts</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Accessories</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Sale</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <input type="text" class="search__input" placeholder="Search entire store here">
+                </div>
+                <div class="user-settings">
+                    <div class="bag">
+                        <div class="bag__counter">0</div>
+                    </div>
+                    <div class="wishlist">
+                        <div class="wishlist__counter">0</div>
+                    </div>
+                </div>
+                <div class="user__outer">
+                    <div class="user__bag">
+                        <a href="#header" class="bag__close"></a>
+                        <h2 class="section-subtitle">SUCCESSFULLY ADDED TO BAG!</h2>
+                        <span class="bag__list">Your Bag:</span>
+                        <div class="item-cost" id="items__data">
+                        </div>
+                        <div class="item-cost delivery-cost">
+                            <div class="bag__delivery-name">Total Delivery Cost</div>
+                            <div class="bag__delivery-value">$4.99</div>
+                        </div>
+                        <div class="item-cost bag__total">
+                            <div class="bag__total-name">Total:</div>
+                            <div class="bag__qty"></div>
+                            <div class="bag__total-value"></div>
+                        </div>
+                        <button type="button" class="bag__submit">Submit</button>
+                    </div>
+                </div>
+                <div class="wishlist__outer">
+					<div class="wishlist__inner">
+						<a href="#header" class="wishlist__close"></a>
+						<h2 class="section-subtitle">SUCCESSFULLY ADDED TO WISHLIST!</h2>
+						<span class="bag__list">Your Wishlist:</span>
+						<div class="item-cost" id="wishlist__data"></div>
+					</div>
+				</div>
+                <div class="user__message">
+                    <div class="user__message-text"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="pdp__nav">
+        <div class="container">
+            <div class="page__header page__header-pdp">
+                <div class="nav__section">
+                    <a href="./index.html" class="home__link">Home</a>
+                    <a href="./plp.html" class="shorts__section">Shorts</a>
+                </div>
+                <h4 class="item__title pdp__header-item">Sportif's Original Short</h4>
+            </div>
+        </div>
+    </section>
+    <section class="pdp">
+        <div class="container">
+            <div class="pdp__content">
+                <div class="data__section">
+                    <div class="pdp__photos">
+                        <div class="product__images">
+                            <img src="./images/Sportif's_Original_Short_front.jpg" alt="Sportif's Original Short Front"
+                                class="product__main-image" id="main-image" />
+
+                            <div class="product__slider-wrap">
+                                <div class="product__slider">
+                                    <img src="./images/Sportif's_Original_Short_front.jpg"
+                                        alt="Sportif's Original Short Front" class="product__image active" />
+                                    <img src="./images/Sportif's_Original_Short_back.jpg"
+                                        alt="Sportif's Original Short Back" class="product__image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pdp__data">
+                        <h2 class="pdp__title">Sportif's Original Short <span class="item__id">ITEM # 670170</span></h2>
+                        <div class="pdp__rating">
+                            <div class="demo jq-stars pdp__ovarall-rating"></div>
+                            <span class="review__counter">93 REVIEWS</span>
+                        </div>
+                        <div class="item__price pdp__price">As low as <br> <strong
+                                class="pdp__price-value">$67.00</strong></div>
+                        <div class="pdp__settings">
+                            <h5 class="list__title">COLOR</h5>
+                            <ul class="item__palette-list">
+                                <li class="item__palette-item black pdp__palette-item"></li>
+                                <li class="item__palette-item pastelle pdp__palette-item"></li>
+                                <li class="item__palette-item mocco pdp__palette-item"></li>
+                                <li class="item__palette-item dark-blue pdp__palette-item"></li>
+                                <li class="item__palette-item grey pdp__palette-item"></li>
+                            </ul>
+                        </div>
+                        <div class="pdp__settings">
+                            <h5 class="list__title">SIZE</h5>
+                            <ul class="size__list pdp__size-list">
+                                <li class="size__item pdp__size">30</li>
+                                <li class="size__item pdp__size">32</li>
+                                <li class="size__item pdp__size">34</li>
+                                <li class="size__item pdp__size">36</li>
+                                <li class="size__item pdp__size">38</li>
+                                <li class="size__item pdp__size">40</li>
+                                <li class="size__item pdp__size">42</li>
+                                <li class="size__item pdp__size">44</li>
+                                <li class="size__item pdp__size">46</li>
+                            </ul>
+                        </div>
+                        <div class="add-btns">
+                            <button class="item__add-btn sportif__btn pdp__add-btn" type="button" data-product='{
+                                "id":"0", 
+                                "name":"Sportif Original Short", 
+                                "quantity": "1",
+                                "price":"67.00",
+                                "currency": "$",
+                                "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                            <button class="wishlist__add-btn pdp__add-btn" type="button" data-product='{
+                                "id":"0", 
+                                "name":"Sportif Original Short", 
+                                "quantity": "1",
+                                "price":"67.00",
+                                "currency": "$",
+                                "rating":"0"}'>
+                                ADD TO WISHLIST
+                            </button>
+                        </div>
+                        <div class="social-media__share">
+                            <ul class="social-media__list">
+                                <li class="social-media__item">
+                                    <a href="https://www.facebook.com/" class="social-media__link facebook" target="_blank"></a>
+                                </li>
+                                <li class="social-media__item">
+                                    <a href="https://twitter.com/" class="social-media__link twitter" target="_blank"></a>
+                                </li>
+                                <li class="social-media__item">
+                                    <a href="https://www.pinterest.com/" class="social-media__link pinterest" target="_blank"></a>
+                                </li>
+                                <li class="social-media__item link">
+                                    <a href="./pdp.html" class="social-media__link link" target="_blank"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="bonus">
+                            <h6 class="bonus__title">- Worry Free Shopping -</h6>
+                            <ul class="bonus__list">
+                                <li class="bonus__item prio-shipping">
+                                    <span class="bonus__item-text">FREE PRIORITY SHIPPING ON ORDERS $99+*</span>
+                                </li>
+                                <li class="bonus__item retrn-exchange">
+                                    <span class="bonus__item-text">FREE RETURNS & EXCHANGES*</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pdp__section details__section">
+                    <h3 class="section-subtitle">DETAILS</h3>
+                    <div class="pdp__inner">
+                        <p class="pdp__text">
+                            With its classic design, practical features and unequaled comfort - it's no wonder Sportif
+                            'Original' stretch cargo shorts are practically the uniform on yachts worldwide! A customer
+                            favorite for over 50 years, they're called the world's best boating shorts. Featuring a 4
+                            inch
+                            inseam for sizes 30-40 and 5.5 inch inseam for sizes 42-46.
+                        </p>
+                        <ul class="pdp-text__list">
+                            <li class="pdp-text__item">Constructed from our 7.5 oz. Original Stretch Twill fabric</li>
+                            <li class="pdp-text__item">Exclusive 7-pocket design includes two deep front pockets, two
+                                front cargo pockets with
+                                button-through flap closure, and two zippered security back pockets</li>
+                            <li class="pdp-text__item">Bonus pocket inside the right front pocket is perfect for
+                                carrying a small cell phone or
+                                pocket knife</li>
+                            <li class="pdp-text__item">Non-roll stretch waistband</li>
+                            <li class="pdp-text__item">Sturdy tunnel belt loops</li>
+                            <li class="pdp-text__item">Durable double fabric seat</li>
+                            <li class="pdp-text__item">Gusset crotch</li>
+                            <li class="pdp-text__item">Double-stitched seams throughout</li>
+                            <li class="pdp-text__item">Bar tack stitching reinforces areas of stress to guarantee years
+                                of service</li>
+                            <li class="pdp-text__item">4 inch inseam (sizes 30-40) or 5.5 inch inseam (sizes 42-46)</li>
+                            <li class="pdp-text__item">Wrinkle resistant 62 polyester/35 cotton/3 spandex blend is
+                                travel friendly and ready to
+                                wear straight from the dryer</li>
+                            <li class="pdp-text__item">Machine wash</li>
+                            <li class="pdp-text__item">Imported</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pdp__section reviews__section">
+                    <h3 class="section-subtitle">REVIEWS</h3>
+                    <h4 class="noreview-title">There are no reviews for this item yet... Be the first to review!</h4>
+                    <ul class="reviews__list"></ul>
+                </div>
+                <div class="pdp__section evaluation__section">
+                    <div class="pdp__inner">
+                        <h4 class="item__title pdp__item">You're Reviewing:</h4>
+                        <h2 class="pdp__title evaluation__title">Sportif's Original Short</h2>
+                        <span class="your-rating">Your Rating</span>
+                        <span class="pdp__item no-rating">Please fill all filds required and complete rating evaluation... </span>
+                        <form action="#" class="rating__form" id="rating__form">
+                            <ul class="rating__list your-rating__list">
+                                <li class="rating__item reviewer-rating__item comfort__item">
+                                    <span class="rating__name your-rating__name">Comfort</span>
+                                    <div class="comfort pdp-form-rating client__rewiew-data jq-stars review-rating reviewer__rating"></div>
+                                </li>
+                                <li class="rating__item reviewer-rating__item fit__item">
+                                    <span class="rating__name your-rating__name">Fit</span>
+                                    <div class="fit pdp-form-rating client__rewiew-data jq-stars review-rating reviewer__rating"></div>
+                                </li>
+                                <li class="rating__item reviewer-rating__item overall__item">
+                                    <span class="rating__name your-rating__name">Overall</span>
+                                    <div class="overall pdp-form-rating client__rewiew-data jq-stars review-rating reviewer__rating"></div>
+                                </li>
+                                <li class="rating__item reviewer-rating__item quality__item">
+                                    <span class="rating__name your-rating__name">Quality</span>
+                                    <div class="quality pdp-form-rating client__rewiew-data jq-stars review-rating reviewer__rating"></div>
+                                </li>
+                            </ul>
+                            <div class="reviewer__data">
+                                <input type="text" class="client__name client__data-item  user__data-item" id="client__name" placeholder="Name">
+                                <input type="text" class="client__surname client__data-item user__data-item" id="client__surname" placeholder="Surname">
+                            </div>
+                            <textarea class="client__text client__data-item" id="client__text" name="rating__text" cols="30" rows="10" placeholder="Review"></textarea>
+                            <button class="review__submit-btn sportif__btn" type="submit">SUBMIT</button>
+                        </form>
+                        <a href="#top" class="top__arrow-link pdp__arrow-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__column">
+                    <h5 class="list__title">ORDERING ONLINE</h5>
+                    <ul class="footer__List">
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Account Login</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Our Guarantee</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Sportif Stretch Guide</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Size Chart & Sizing Information</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Hemming Information</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Ordering & Payment</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Shipping Information</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Returns</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h5 class="list__title">ABOUT SPORTIF</h5>
+                    <ul class="footer__List">
+                        <li class="footer__item">
+                            <a href="" class="footer__link">COVID-19 Response</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">History</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Legacy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Good Sam Program</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Privacy & Security</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Terms & Conditions</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h5 class="list__title">QUICK LINKS</h5>
+                    <ul class="footer__List">
+                        <li class="footer__item">
+                            <a href="" class="footer__link">FAQs</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Shop Online Catalog</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__subscribe">
+                    <h5 class="list__title">GET TO KNOW US</h5>
+                    <p class="subscribe__desc">Sign up for our weekly newsletter and get a 10% off coupon by email for
+                        your first order!</p>
+                    <label class="subscribe__label">Sign Up for Our Newsletter:</label>
+                    <form class="subscribe__form">
+                        <input type="text" class="subscribe__input" placeholder="EMAIL ADDRESS">
+                        <button class="subscribe__button sportif__btn">SUBSCRIBE</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./app/js/script.js"></script>
+</body>
+
+</html>

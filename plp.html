@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SportIF PLP</title>
+    <link rel="stylesheet" type="text/css" href="./dist/star-rating-svg.css">
+    <link rel="stylesheet" href="./dist/style.css" />
+    <script src="jquery-3.6.1.min.js"></script>
+    <script src="./dist/jquery.star-rating-svg.js"></script>
+    <script defer src="./dist/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__top">
+                <a href="./index.html" class="logo">
+                    <img src="images/hiking_logo.png" alt="logo-image" class="logo__img">
+                </a>
+                <button class="menu__btn">
+                    <span class="row"></span>
+                </button>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Shorts</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Pants</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Shirts</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Accessories</a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="./plp.html" class="menu__link">Sale</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="search">
+                    <input type="text" class="search__input" placeholder="Search entire store here">
+                </div>
+                <div class="user-settings">
+                    <div class="bag">
+                        <div class="bag__counter">0</div>
+                    </div>
+                    <div class="wishlist">
+                        <div class="wishlist__counter">0</div>
+                    </div>
+                </div>
+                <div class="user__outer">
+                    <div class="user__bag">
+                        <a href="#header" class="bag__close"></a>
+                        <h2 class="section-subtitle">SUCCESSFULLY ADDED TO BAG!</h2>
+                        <span class="bag__list">Your Bag:</span>
+                        <div class="item-cost" id="items__data">
+                        </div>
+                        <div class="item-cost delivery-cost">
+                            <div class="bag__delivery-name">Total Delivery Cost</div>
+                            <div class="bag__delivery-value">$4.99</div>
+                        </div>
+                        <div class="item-cost bag__total">
+                            <div class="bag__total-name">Total:</div>
+                            <div class="bag__qty"></div>
+                            <div class="bag__total-value"></div>
+                        </div>
+                        <button type="button" class="bag__submit">Submit</button>
+                    </div>
+                </div>
+                <div class="wishlist__outer">
+                    <div class="wishlist__inner">
+                        <a href="#header" class="wishlist__close"></a>
+                        <h2 class="section-subtitle">SUCCESSFULLY ADDED TO WISHLIST!</h2>
+                        <span class="bag__list">Your Wishlist:</span>
+                        <div class="item-cost" id="wishlist__data"></div>
+                    </div>
+                </div>
+                <div class="user__message">
+                    <div class="user__message-text"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="plp__nav">
+        <div class="container">
+            <div class="page__header">
+                <div class="nav__section">
+                    <a href="./index.html" class="home__link">Home</a>
+                    <a href="#" class="shorts__section">Shorts</a>
+                </div>
+                <div class="plp__search">
+                    <input type="text" class="plp__search-input" placeholder="SEARCH">
+                </div>
+                <div class="filter__dymanic">Filters</div>
+            </div>
+        </div>
+    </section>
+    <section class="product-list">
+        <div class="container">
+            <aside class="filters">
+                <a href="#header" class="filters__close"></a>
+                <div class="filters__section">
+                    <h5 class="list__title filters__title active">SIZE</h5>
+                    <ul class="size__list filters__list active">
+                        <li class="size__item" data-product='{"size": "30"}'>30</li>
+                        <li class="size__item" data-product='{"size": "32"}'>32</li>
+                        <li class="size__item" data-product='{"size": "34"}'>34</li>
+                        <li class="size__item" data-product='{"size": "36"}'>36</li>
+                        <li class="size__item" data-product='{"size": "38"}'>38</li>
+                        <li class="size__item" data-product='{"size": "40"}'>40</li>
+                        <li class="size__item" data-product='{"size": "42"}'>42</li>
+                        <li class="size__item" data-product='{"size": "44"}'>44</li>
+                        <li class="size__item" data-product='{"size": "46"}'>46</li>
+                    </ul>
+                </div>
+                <div class="filters__section">
+                    <h5 class="list__title filters__title active">COLOR</h5>
+                    <ul class="color__list filters__list active">
+                        <li class="color__item black" data-product='{"color": "black"}'></li>
+                        <li class="color__item brown" data-product='{"color": "brown"}'></li>
+                        <li class="color__item blue" data-product='{"color": "blue"}'></li>
+                        <li class="color__item green" data-product='{"color": "green"}'></li>
+                        <li class="color__item grey" data-product='{"color": "grey"}'></li>
+                        <li class="color__item orange" data-product='{"color": "orange"}'></li>
+                        <li class="color__item white" data-product='{"color": "white"}'></li>
+                    </ul>
+                </div>
+                <div class="filters__section">
+                    <h5 class="list__title filters__title active">BOTTOMS</h5>
+                    <ul class="bottoms__list filters__list active">
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox shorts" data-product='{"name": "short"}'>
+                            <label class="bottoms__checkbox-label">Short</label>
+                        </li>
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox cargo" data-product='{"name": "cargo"}'>
+                            <label class="bottoms__checkbox-label">Cargo</label>
+                        </li>
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox plainFront"
+                                data-product='{"name": "plainFront"}'>
+                            <label class="bottoms__checkbox-label">Plain Front</label>
+                        </li>
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox denimJean"
+                                data-product='{"name": "denimJean"}'>
+                            <label class="bottoms__checkbox-label">Denim Jean</label>
+                        </li>
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox chino" data-product='{"name": "chino"}'>
+                            <label class="bottoms__checkbox-label">Chino</label>
+                        </li>
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox swim" data-product='{"name": "swim"}'>
+                            <label class="bottoms__checkbox-label">Swim</label>
+                        </li>
+                        <li class="bottoms__item">
+                            <input type="checkbox" class="bottoms__checkbox pleatedFront"
+                                data-product='{"name": "pleatedFront"}'>
+                            <label class="bottoms__checkbox-label">Pleated Front</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filters__section">
+                    <h5 class="list__title filters__title">INSEAM</h5>
+                </div>
+                <div class="filters__section">
+                    <h5 class="list__title filters__title">SUSTAINABLE FABRIC</h5>
+                </div>
+                <div class="filters__section">
+                    <h5 class="list__title filters__title">COLLECTIONS</h5>
+                </div>
+            </aside>
+            <main class="plp">
+                <h4 class="no-item__title">Sorry, no items match your search. Please try again...</h4>
+                <ul class="plp__list">
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "grey", 
+                        "size": "36, 38, 40"}'>
+                        <img src="./images/sportif_original_short_plp.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Sportif's Original Short</a>
+                        <div class="demo jq-stars"></div>
+                        <div class="item__price">As low as <strong>$67.00</strong></div>
+                        <div class="item__palette">
+                            <ul class="item__palette-list">
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color black"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color pastelle"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color mocco"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color dark-blue"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color grey"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="item__add-btn sportif__btn" type="button" data-product='{
+                                "id":"0", 
+                                "name":"Sportif Original Short", 
+                                "quantity": "1",
+                                "price":"67.00",
+                                "currency": "$",
+                                "rating":"0"}'>
+                            ADD TO CART
+                        </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "cargo",
+                        "color": "grey",
+                         "size": "32, 34, 36, 38, 40"}'>
+                        <img src="./images/sportif_hatteras_short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Sportif's Hatteras Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$54.99</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color pastelle"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color mocco"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color brown"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color moccachino"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color milk"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"1", 
+                            "name":"Sportif Hatteras Short", 
+                            "quantity": "1",
+                            "price":"54.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "chino",
+                        "color": "blue",
+                         "size": "38, 40"}'>
+                        <img src="./images/sportif_tidewater_short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Sportif's Tidewater Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$54.99</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color pastelle"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color mocco"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color green-grey"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color grey"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"2", 
+                            "name":"Sportif Tidewater Short", 
+                            "quantity": "1",
+                            "price":"54.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "white",
+                         "size": "30, 32, 34, 38, 40"}'>
+                        <img src="./images/Sportif's_Lauderdale_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Sportif's Lauderdale Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$67.00</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color pastelle"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color mocco"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color brown"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color moccachino"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color grey"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"3", 
+                            "name":"Sportif Lauderdale Short", 
+                            "quantity": "1",
+                            "price":"67.00",
+                            "currency": "$",
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "blue",
+                         "size": "36, 38, 40, 42, 46"}'>
+                        <img src="./images/Captain's_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Captain's Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$67.00</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color pastelle"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color mocco"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color blue-grey"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"4", 
+                            "name":"Captain Short", 
+                            "quantity": "1",
+                            "price":"67.00",
+                            "currency": "$", 
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "orange",
+                         "size": "30, 32, 34, 36, 38, 40"}'>
+                        <img src="./images/Galapagos_Plain_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Galapagos Plain Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$34.99</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color pastelle"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color mocco"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color light-grey"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color brown"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color milk"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"5", 
+                            "name":"Galapagos Plain Short", 
+                            "quantity": "1",
+                            "price":"34.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "brown",
+                         "size": "32, 36, 40, 42, 44"}'>
+                        <img src="./images/Galapagos_Pleated_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Galapagos Pleated Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$34.99</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color pastelle"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color mocco"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color light-grey"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color brown"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"6", 
+                            "name":"Galapagos Pleated Short", 
+                            "quantity": "1",
+                            "price":"34.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "blue",
+                        "size": "34, 36, 38, 40, 44"}'>
+                        <img src="./images/Sportif's_Tidewater_Denim_Cargo_Short.jpg" alt="plp__item-img"
+                            class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Sportif's Tidewater Denim Cargo Short</a>
+                            <div class="demo jq-stars"></div>
+                            <div class="item__price">As low as <strong>$69.00</strong></div>
+                            <div class="item__palette">
+                                <ul class="item__palette-list">
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color black"></div>
+                                    </li>
+                                    <li class="item__palette-item">
+                                        <div class="item__palette-color dark-blue"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"7", 
+                            "name":"Sportif Tidewater Denim Cargo Short", 
+                            "quantity": "1",
+                            "price":"69.00",
+                            "currency": "$",
+                            "rating":"0"}'>
+                                ADD TO CART
+                            </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "orange",
+                         "size": "30, 32, 34, 36, 38, 40"}'>
+                        <img src="./images/Marchal's_Hatteras_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Marchal's Hatteras Short</a>
+                        <div class="demo jq-stars"></div>
+                        <div class="item__price">As low as <strong>$40.99</strong></div>
+                        <div class="item__palette">
+                            <ul class="item__palette-list">
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color black"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color mocco"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color brown"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color moccachino"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color dark-blue"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color light-grey"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color grey-brown"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"8", 
+                            "name":"Marchal Hatteras Short", 
+                            "quantity": "1",
+                            "price":"40.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                            ADD TO CART
+                        </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "brown",
+                         "size": "40, 42, 44, 46"}'>
+                        <img src="./images/Ecoths_Ashcroft_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Ecoths Ashcroft Short</a>
+                        <div class="demo jq-stars"></div>
+                        <div class="item__price">As low as <strong>$41.99</strong></div>
+                        <div class="item__palette">
+                            <ul class="item__palette-list">
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color black"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color pastelle"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color mocco"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color dark-blue"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color light-grey"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color brown"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"9", 
+                            "name":"Ecoths Ashcroft Short", 
+                            "quantity": "1",
+                            "price":"41.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                            ADD TO CART
+                        </button>
+                    </li>
+                    <li class="plp__item sportif-item" data-product='{
+                        "name": "short",
+                        "color": "green",
+                         "size": "30, 32, 34, 36, 38, 40"}'>
+                        <img src="./images/Ecoths_Gannon_Short.jpg" alt="plp__item-img" class="plp__item-img">
+                        <a href="./pdp.html" class="item__title plp__item-title">Ecoths Gannon Short</a>
+                        <div class="demo jq-stars"></div>
+                        <div class="item__price">As low as <strong>$42.99</strong></div>
+                        <div class="item__palette">
+                            <ul class="item__palette-list">
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color black"></div>
+                                </li>
+                                <li class="item__palette-item">
+                                    <div class="item__palette-color dark-blue"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="item__add-btn sportif__btn" type="button" data-product='{
+                            "id":"10", 
+                            "name":"Ecoths Gannon Short", 
+                            "quantity": "1",
+                            "price":"42.99",
+                            "currency": "$",
+                            "rating":"0"}'>
+                            ADD TO CART
+                        </button>
+                    </li>
+                </ul>
+                <a href="#top" class="top__arrow-link plp__arrow-link"></a>
+                <div class="pagination">
+                    <ul class="pages">
+                        <li class="page">1</li>
+                        <li class="page">2</li>
+                        <li class="page pagination-arrow"></li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__column">
+                    <h5 class="list__title">ORDERING ONLINE</h5>
+                    <ul class="footer__List">
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Account Login</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Our Guarantee</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Sportif Stretch Guide</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Size Chart & Sizing Information</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Hemming Information</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Ordering & Payment</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Shipping Information</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Returns</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h5 class="list__title">ABOUT SPORTIF</h5>
+                    <ul class="footer__List">
+                        <li class="footer__item">
+                            <a href="" class="footer__link">COVID-19 Response</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">History</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Legacy</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Good Sam Program</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Privacy & Security</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Terms & Conditions</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__column">
+                    <h5 class="list__title">QUICK LINKS</h5>
+                    <ul class="footer__List">
+                        <li class="footer__item">
+                            <a href="" class="footer__link">FAQs</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Shop Online Catalog</a>
+                        </li>
+                        <li class="footer__item">
+                            <a href="" class="footer__link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__subscribe">
+                    <h5 class="list__title">GET TO KNOW US</h5>
+                    <p class="subscribe__desc">Sign up for our weekly newsletter and get a 10% off coupon by email for
+                        your first order!</p>
+                    <label class="subscribe__label">Sign Up for Our Newsletter:</label>
+                    <form class="subscribe__form">
+                        <input type="text" class="subscribe__input" placeholder="EMAIL ADDRESS">
+                        <button class="subscribe__button sportif__btn">SUBSCRIBE</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./app/js/script.js"></script>
+</body>
+
+</html>
